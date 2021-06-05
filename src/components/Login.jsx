@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     return (
@@ -6,12 +7,12 @@ const Login = () => {
             <div className="wrapper">
                 <nav>
                     <ul className="logo">
-                        <li><a href="" className="chat">Chat</a></li>
+                        <li><Link href="" className="chat">Chat</Link></li>
                     </ul>
                     <ul>
-                        <li> <a className="active2" href="#home">Home</a></li>
-                        <li> <a className="active1" href="#rooms">Rooms</a></li>
-                        <li> <a className="active" href="#login">LogIn</a></li>
+                        <li> <Link className="active2" to="/home">Home</Link></li>
+                        <li> <Link className="active1" to="/room">Rooms</Link></li>
+                        <li> <Link className="active" to="/login">LogIn</Link></li>
                     </ul>
                 </nav>
             </div>
@@ -24,7 +25,7 @@ const Login = () => {
                 </div>
                 <br /><br />
                 <div className="login">
-                    <button className="google" href="#google">LogIn With Google+</button>
+                    <button className="google" href="google">LogIn With Google+</button>
                 </div>
 
             </div>

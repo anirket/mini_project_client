@@ -96,6 +96,45 @@ h2 {
     
 }
 
+select{
+    background-color: #dee;
+    color: black;
+    padding:10px 12px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;     
+}
+.text-wrapper{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+.text{
+    margin-top: 300px;
+    background-color: #3e8e41;
+    font-size: 50px;
+    color: black;
+    padding:10px 12px;
+    font-size: 18px;
+    border-radius: 35px;
+     width: 22vw;
+}
+.room{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+.click{
+    background-color: lightsalmon;
+    color: black;
+    padding:10px 15px;;
+    font-size: 18px;
+    border-radius: 35px;
+    cursor: pointer;
+    margin-top: 200px;  
+    width: 25vw;
+}
+
 @media screen and (min-width:800px){
 
 nav ul{
@@ -112,4 +151,5 @@ nav{
 .logo{
     margin: 0;
 }
+
 }
