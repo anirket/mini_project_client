@@ -1,36 +1,36 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BsFillChatDotsFill } from "react-icons/bs";
+import Fade from 'react-reveal/Fade';
+import LoginToggle from './Extras/LoginToggle';
 
 const Login = () => {
+
     return (
-        <div>
-            <div className="wrapper">
-                <nav>
-                    <ul className="logo">
-                        <li><Link href="" className="chat">Chat</Link></li>
-                    </ul>
-                    <ul>
-                        <li> <Link className="active2" to="/home">Home</Link></li>
-                        <li> <Link className="active1" to="/room">Rooms</Link></li>
-                        <li> <Link className="active" to="/login">LogIn</Link></li>
-                    </ul>
-                </nav>
-            </div>
+        <>
+            <div className="logincomponent bg-white text-gray-800 ">
+                <div className="groupchatlogo flex items-center flex-col">
+                    <div className="text-3xl md:text-4xl mt-24 flex items-center  justify-center ">
+                        <div className="mr-5">
+                            <BsFillChatDotsFill />
+                        </div>
+                        <div className="">
+                            GROUP CHAT
+                        </div>
+                    </div>
+                    <Fade left cascade>
+                        <ul className="mt-16 text-lg md:text-xl ml-2 md:ml-0 md:mt-24">
 
-            <div className="main">
-                <div className="head">
-                    <h1> GROUP CHAT APPLICATION </h1><br />
-                    <h2>DOUBTS SOLVING VIA CHAT</h2><br /><br /><br />
-                    <h5><span className="text-gray-800 font-normal">Clear Your Doubt's At Comfort Of <br />Your Home</span></h5>
+                            <li className="p-4">-  💬 Online Live Chat Facility</li>
+                            <li className="p-4">-  🧑‍🎓  Clear Your Doubts At Comfort Of Your Home</li>
+                            <li className="p-4">-  👨‍🎓 Chat Rooms based on Different Subjects</li>
+                        </ul>
+                    </Fade>
                 </div>
-                <br /><br />
-                <div className="login">
-                    <button className="google" href="google">LogIn With Google+</button>
-                </div>
+                <LoginToggle />
 
             </div>
 
-        </div>
+        </>
     )
 }
 

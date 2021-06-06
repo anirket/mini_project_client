@@ -1,37 +1,42 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { AiFillCaretDown } from "react-icons/ai";
+import { RoomnameContext } from './Contexts/RoomContext';
 import { Link } from 'react-router-dom'
-const Room = () => {
-    return (
-    <div>
-    <div className="wrapper">
-        <nav>
-            <ul className="logo">
-                <li><Link href="" className="chat">Chat</Link></li>
-            </ul>
-            <ul>
-                 <li> <Link className="active2" to="/home">Home</Link></li>
-                <li> <Link className="active1" to="/room">Rooms</Link></li>
-                <li> <Link className="active" to="/login">LogIn</Link></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="text-wrapper">
-        <div class="text">
-            <div class="selection">
-                <label for="room">Choose a Room:</label>
 
-                <select id="room">
-                <option value="Room 1">Room 1</option>
-                <option value="Room 2">Room 2</option>
-                <option value="Room 3">Room 3</option>
-                </select>
-            </div>  
-        </div>
-    </div>
-    <div class="room">
-        <button class="click" href="/room"> JOIN the Room</button>
-    </div>
-    </div>
+const Room = () => {
+    const { roomname, setroomname } = useContext(RoomnameContext);
+    const [roomsarray, setroomsarray] = useState(["JAVASCRIPT", "PYTHON", "C++"]);
+
+    const handledropdwonchange = (e) => {
+        setroomname(e.target.value)
+    }
+    return (
+        <>
+            <div className="wrapper flex flex-col justify-center items-center">
+
+
+                <div className="dropdown relative w-full border-none outline-none mt-14">
+                    <div>
+                        <label className="font-semibold">Select a Room : </label>
+                        <select onChange={(e) => handledropdwonchange(e)} className="cursor-pointer bg-gray-200 outline-none appearance-none  border-none inline-block py-3 pl-3 pr-8 rounded leading-tight w-full mt-3 font-semibold">
+                            {
+                                roomsarray.map((room, key) => <option className="" key={key} value={room}>{room}</option>)
+                            }
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-14 right-0 flex items-center px-2">
+                            <AiFillCaretDown />
+                        </div>
+                    </div>
+                </div>
+
+                <Link to="/chat">
+                    <div className="joinroombutton mt-40 hover:bg-green-600 bg-green-500 text-white p-3 text-center rounded-full cursor-pointer ">
+                        <button className="click focus:outline-none"> JOIN</button>
+                    </div>
+                </Link>
+
+            </div>
+        </>
     )
 }
 
