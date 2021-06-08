@@ -65,11 +65,51 @@
 }
 
 .chatmessages {
-    width: 60vw;
+    width: 62vw;
 }
 
 .chats {
     height: 55vh;
+}
+
+.mymodal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    width: 80vw;
+    height: 70vh;
+}
+
+.myoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+.editinginput{
+    width: 60vw;
+    height: 6vh;
 }
 
 @media only screen and (min-width:640px) {
@@ -90,14 +130,18 @@
         width: 26.8vw;
     }
     .chatmessages {
-        width: 18vw;
+        width: 13vw;
     }
     .chats {
         height: 63vh;
     }
+    .mymodal {
+        width: 50vw;
+        height: 65vh;
+    }
     /* scrollbar */
     /* width */
-    ::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         width: 10px;
     }
     /* Track */
@@ -112,4 +156,8 @@
      ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+    .editinginput{
+        width: 30vw;
+    }
+    
 }

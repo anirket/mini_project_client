@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext,useEffect } from 'react'
 import { AiFillCaretDown } from "react-icons/ai";
 import { RoomnameContext } from './Contexts/RoomContext';
 import { Link } from 'react-router-dom'
@@ -10,6 +10,10 @@ const Room = () => {
     const handledropdwonchange = (e) => {
         setroomname(e.target.value)
     }
+    useEffect(() => {
+     setroomname("JAVASCRIPT")
+    }, [])
+
     return (
         <>
             <div className="wrapper flex flex-col justify-center items-center">

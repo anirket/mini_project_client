@@ -1,0 +1,1 @@
+export const socketurl = `http://localhost:4000/`
