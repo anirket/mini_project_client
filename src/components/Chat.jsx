@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import { MdSend } from "react-icons/md";
-import { useState } from 'react/cjs/react.development';
 import { RoomnameContext } from './Contexts/RoomContext';
 import io from "socket.io-client";
 import { socketurl } from '../utils/connectionPort'
