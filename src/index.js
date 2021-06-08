@@ -8,7 +8,7 @@ ReactDOM.render(
     <Auth0Provider
         domain={process.env.REACT_APP_DOMAIN}
         clientId={process.env.REACT_APP_CLIENTID}
-        redirectUri="http://localhost:3000/rooms"
+        redirectUri="https://chat-code.vercel.app/rooms"
     >
         <App />
     </Auth0Provider>
