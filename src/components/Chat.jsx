@@ -16,13 +16,14 @@ Modal.setAppElement("#root");
 const Chat = () => {
     let socket, messagestore = [];
     const { user } = useAuth0();
-    const { roomname, setroomname } = useContext(RoomnameContext);
+    const { roomname } = useContext(RoomnameContext);
     const [chats, setchats] = useState([])
     const [message, setmessage] = useState("")
     const [roomsize, setroomsize] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
     const [editingid, seteditingid] = useState("");
     const [editingmsg, seteditingmsg] = useState("");
+    const [loadoldmessages,setloadoldmessages] = useState(true);
 
 
     //Socket connection and setup
@@ -43,8 +44,10 @@ const Chat = () => {
         socket.emit("join_room", data);
         socket.on("old_chats",(data)=>{
             messagestore = data;
+            setloadoldmessages(false);
             setchats([messagestore])
             scrollmessages();
+            
         })
 
         socket.on('recieve_message', (data) => {
@@ -255,6 +258,7 @@ const Chat = () => {
                     </div>
                 </Modal>
                 <div className="chats overflow-scroll pb-3">
+                    {loadoldmessages && <div className="md:text-xl text-lg justify-center items-center">Loading old Messages from server...</div>}
                     {
                         chats.map((chatmessages) => (
                             chatmessages.map((messages, index) => {

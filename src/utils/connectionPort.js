@@ -1,1 +1,1 @@
-export const socketurl = `http://localhost:4000/`
+export const socketurl = `https://chat-application1234.herokuapp.com/`

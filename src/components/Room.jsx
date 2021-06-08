@@ -4,7 +4,7 @@ import { RoomnameContext } from './Contexts/RoomContext';
 import { Link } from 'react-router-dom'
 
 const Room = () => {
-    const { roomname, setroomname } = useContext(RoomnameContext);
+    const { setroomname } = useContext(RoomnameContext);
     const [roomsarray, setroomsarray] = useState(["JAVASCRIPT", "PYTHON", "C++"]);
 
     const handledropdwonchange = (e) => {
